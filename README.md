@@ -1,0 +1,1 @@
+A nice example of grid, media query for desktop and general style

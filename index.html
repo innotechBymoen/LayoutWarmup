@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Layout Warmup | 🏝</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="shortcut icon" href="/images/logo.svg" type="image/x-icon">
+</head>
+
+<!-- It is fairly clear this site follows the standard 3 section idea, with a header, main and footer -->
+
+<body>
+    <!-- I see the header on both sizes just has two columns, so I can just add in a couple images -->
+    <header id="page_header">
+        <img src="/images/logo.svg" alt="Unicorn logo">
+        <img src="/images/menu.svg" alt="Menu Icon" id="menu_icon">
+    </header>
+
+    <!-- The main content is a little more interesting, on the mobile view it looks like there are just 4 rows
+    But I can see on the desktop view the cards turn into columns
+    This tells me that the cards need to be siblings, but the title does not -->
+    <main id="page_content">
+        <h1 class="main_title">Software Development</h1>
+
+        <!-- I create a section that allows me to create another grid. It will show the cards in rows on mobile and columns on desktop -->
+        <section id="card_container">
+
+            <!-- Each card is its own article, this allows me to move them with grid easily 
+            I use a class on the article to allow myself the ability to style all cards with one rule instead of an id
+            which would force me to re-write the CSS for all articles -->
+            <article class="main_card">
+                <!-- Each card is a grid, and they look fairly standard with 4 rows -->
+                <img src="/images/card1.jpg" alt="Planning supplies on a desk">
+                <h1>App Development</h1>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Fuga sint illo ad? Repellendus et sed, ab
+                    saepe, iusto a dolor dolorum atque quam blanditiis magni! Sequi asperiores qui quidem repellendus!
+                </p>
+                <!-- The last row is more interesting as we have some text next to an arrow, so I make these siblings
+                enabling me to turn them into columns -->
+                <div>
+                    <h4>Learn More</h4>
+                    <img src="/images/arrow_right.svg" alt="Right direction arrow">
+                </div>
+            </article>
+
+            <article class="main_card">
+                <img src="/images/card2.jpg" alt="Planning supplies on a desk">
+                <h1>Faster Prototyping</h1>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Fuga sint illo ad? Repellendus et sed, ab
+                    saepe, iusto a dolor dolorum atque quam blanditiis magni! Sequi asperiores qui quidem repellendus!
+                </p>
+                <div>
+                    <h4>Learn More</h4>
+                    <img src="/images/arrow_right.svg" alt="Right direction arrow">
+                </div>
+            </article>
+
+            <article class="main_card">
+                <img src="/images/card3.jpg" alt="Planning supplies on a desk">
+                <h1>Web Design</h1>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Fuga sint illo ad? Repellendus et sed, ab
+                    saepe, iusto a dolor dolorum atque quam blanditiis magni! Sequi asperiores qui quidem repellendus!
+                </p>
+                <div>
+                    <h4>Learn More</h4>
+                    <img src="/images/arrow_right.svg" alt="Right direction arrow">
+                </div>
+            </article>
+        </section>
+    </main>
+
+    <!-- Fairly standard footer, just some text content that will be centered -->
+    <footer id="page_footer">
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+    </footer>
+</body>
+
+</html>

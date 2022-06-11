@@ -1,0 +1,122 @@
+/* Start with my standard set of rules that allows me to normalize my site into a good starting point 
+  The font-family and weight are just trying to match the design picture */
+* {
+    margin: 0;
+    padding: 0;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    font-weight: lighter;
+}
+
+body {
+    display: grid;
+    place-items: center;
+    min-height: 100vh;
+    grid-template-rows: auto 1fr auto;
+}
+
+img, svg, iframe {
+    width: 100%;
+}
+
+/* The header is a grid with two columns and a pretty pink background color */
+#page_header {
+    display: grid;
+    grid-auto-flow: column;
+    width: 100%;
+    background-color: #E1B7BF;
+}
+
+/* Style the images in the header to be a specific width and height, and add a little bit of padding */
+#page_header>img {
+    width: 50px;
+    height: 50px;
+    padding: 10px 10vw;
+}
+
+/* Move the menu icon over to the right side of the grid */
+#menu_icon {
+    justify-self: end;
+}
+
+/* Basic center grid for the main content of the page with a grey background color */
+#page_content {
+    display: grid;
+    place-items: center;
+    width: 100%;
+    background-color: rgb(230, 230, 230);
+}
+
+/* Basic text style for the main title of the page */
+.main_title {
+    color: #C262AF;
+    padding: 30px;
+    padding-bottom: 0px;
+    text-align: center;
+    font-size: 2.5rem;
+}
+
+/* Container for the 3 cards, add some margin and make a center grid with gap for rows and columns */
+#card_container {
+    margin: 50px 0px;
+    display: grid;
+    place-items: center;
+    gap: 30px;
+}
+
+/* Each card is a grid with items in the center. Fine tune things like padding, width and box shadow until they look correct */
+.main_card {
+    display: grid;
+    place-items: center;
+    row-gap: 20px;
+    text-align: center;
+
+    width: 80%;
+    padding: 20px;
+    box-shadow: 6px 6px 12px gray;
+    background-color: white;
+}
+
+/* For the Learn More and the arrow image that are columns*/
+.main_card>div {
+    display: grid;
+    grid-template-columns: 5fr 1fr;
+    place-items: center;
+
+    width: 50%;
+    color: #C262AF;
+}
+
+/* Basic style for the footer to give color, padding and put things in the center */
+#page_footer {
+    display: grid;
+    place-items: center;
+    text-align: center;
+    background-color: rgb(84, 84, 84);
+    color: white;
+    padding: 40px 0px;
+    width: 100%;
+}
+
+#page_footer>p {
+    padding: 10px 20px;
+}
+
+/* Move to the desktop specific rules for moving the cards around */
+@media screen and (min-width: 1000px) {
+
+    /* Change the card container to now be 3 columns of equal size.
+    Give the container a max-width in order to not look silly on very large screens
+    Give the container a min-height to space things out
+    Align the items to the start so we can move the middle one down */
+    #card_container {
+        grid-template-columns: 1fr 1fr 1fr;
+        max-width: 1080px;
+        min-height: 70vh;
+        align-items: start;
+    }
+
+    /* Select the middle article (the 2nd child) and move it to the bottom of the container */
+    .main_card:nth-child(2) {
+        align-self: end;
+    }
+}
